@@ -4,6 +4,8 @@ Netbook for CoreOS Cluster
 
 
 ---- Original
+
+
 Fork me!  This repo will allow you to create custom menus within netboot.xyz.
 It works by using your github user name that you input and chains to this URL:
 
