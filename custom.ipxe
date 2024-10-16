@@ -1,12 +1,10 @@
 #!ipxe
-###
-### netboot.xyz-custom menu
-###
+# Boot a persistent RancherOS to RAM
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
+# Location of Kernel/Initrd images
+set base-url http://releases.rancher.com/os/latest
 
-:custom_exit
-exit 0
+kernel ${base-url}/vmlinuz rancher.state.dev=LABEL=RANCHER_STATE rancher.state.wait rancher.cloud_init.datasources=[url:https://raw.githubusercontent.com/RAM9/farmkun/refs/heads/main/rcloud-config]
+initrd ${base-url}/initrd
+boot
+#use 'ros install' to install to disk.
